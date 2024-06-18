@@ -1,3 +1,11 @@
+@import url(/asset/css/header.css);
+
+
+:root{
+    --header-color: #7fbf7fcc;
+    --title-color: #083c08; 
+}
+
 * {
     margin: 0;
     padding: 0;

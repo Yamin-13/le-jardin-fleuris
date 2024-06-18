@@ -1,5 +1,5 @@
 <?php
-$titrePage = "Le jardin Fleuris";
+$titrePage = "Le Jardin Fleuris";
 
 
 // rend la vue

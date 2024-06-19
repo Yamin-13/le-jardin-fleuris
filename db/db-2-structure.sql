@@ -17,11 +17,11 @@ INSERT INTO categorie (id, name) VALUES
 (90, 'Fleurs')
 ;
 
-INSERT INTO article (id, name, TypeOfArticle, text, idUser, idCategorie) VALUES
-(50, 'Fleurs de Lys', 'Fleurs', 'Découvrez la fleur de Lys', 60, 90 )
+INSERT INTO article (id, name, TypeOfArticle, textOfArticle, date, idUser, idCategorie) VALUES
+(50, 'Fleurs de Lys', 'Fleurs', 'Découvrez la fleur de Lys', '2024-06-20 16:00:00', 60, 90 )
 ;
 
-INSERT INTO comment (id, text, date, idUser, idArticle) VALUES
+INSERT INTO comment (id, textOfComment, date, idUser, idArticle) VALUES
 (40, 'très bon article !', '2024-06-20 16:00:00', 60, 50)
 ;
 

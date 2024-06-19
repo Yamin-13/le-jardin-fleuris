@@ -30,7 +30,7 @@ CREATE TABLE user (
 CREATE TABLE comment (
   id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY
   ,textOfComment varchar(500) NOT NULL
-  ,date timestamp(6) NOT NULL
+  ,date timestamp NOT NULL
   ,idUser bigint(20) NOT NULL
   ,idArticle bigint(20) NOT NULL
 )

@@ -7,20 +7,20 @@
  * @return array Succès ou échec. 
  */
 
- function getAll(PDO $db): array
- {
- 
-     // Prépare la requête
-     $query = ' SELECT article.id, article.name, article.date, article.textOfArticle, article.image_filename, article.typeOfArticle, article.idUser, article.idCategorie';
-     $query .= ' FROM article';
-     $statement = $db->prepare($query);
- 
-     // Exécute la requête
-     $successOrFailure = $statement->execute();
-     $listArticle = $statement->fetchAll(PDO::FETCH_ASSOC);
- 
-     return $listArticle;
- }
+function getAll(PDO $db): array
+{
+
+    // Prépare la requête
+    $query = ' SELECT article.id, article.name, article.date, article.textOfArticle, article.image_filename, article.idUser, article.idCategorie';
+    $query .= ' FROM article';
+    $statement = $db->prepare($query);
+
+    // Exécute la requête
+    $successOrFailure = $statement->execute();
+    $listArticle = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    return $listArticle;
+}
 
 
 /**
@@ -32,13 +32,12 @@
  * @return boolean Succès ou échec. 
  */
 
-function create(string $name, string $textOfArticle, string $TypeOfArticle, string $date, string $image_filename, string $idCategorie, string $IdUser, PDO $db): bool
+function create(string $name, string $textOfArticle, string $date, string $image_filename, string $idCategorie, string $IdUser, PDO $db): bool
 {
     // Prépare la requête
-    $query = 'INSERT INTO article (name, TypeOfArticle, textOfArticle, date, image_filename, idCategorie, IdUser ) VALUES (:name, :TypeOfArticle, :textOfArticle, :date, :image_filename, :idCategorie, :IdUser)';
+    $query = 'INSERT INTO article (name, textOfArticle, date, image_filename, idCategorie, IdUser ) VALUES (:name, :textOfArticle, :date, :image_filename, :idCategorie, :IdUser)';
     $statement = $db->prepare($query);
     $statement->bindParam(':name', $name);
-    $statement->bindParam(':TypeOfArticle', $TypeOfArticle);
     $statement->bindParam(':textOfArticle', $textOfArticle);
     $statement->bindParam(':date', $date);
     $statement->bindParam(':image_filename', $image_filename);
@@ -50,4 +49,18 @@ function create(string $name, string $textOfArticle, string $TypeOfArticle, stri
     $successOrFailure = $statement->execute();
 
     return $successOrFailure;
+}
+
+
+function getArticleById($id)
+{
+    global $dbConnection;
+    $stmt = $dbConnection->prepare("SELECT article.name, article.textOfArticle, article.date, article.image_filename, categorie.name AS categorieName 
+
+    -- jointure avec la table categorie pour récupérer le nom de la catégorie
+    FROM article 
+    JOIN categorie ON article.idCategorie = categorie.id 
+    WHERE article.id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }

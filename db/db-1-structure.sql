@@ -25,8 +25,6 @@ CREATE TABLE user (
 )
 ;
 
-
-
 CREATE TABLE comment (
   id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY
   ,textOfComment varchar(500) NOT NULL
@@ -48,7 +46,6 @@ CREATE TABLE article (
       ,date timestamp NOT NULL
       ,textOfArticle varchar(500) NOT NULL
       ,image_filename varchar(255)
-      ,typeOfArticle varchar(50) NOT NULL
       ,idUser bigint(20) NOT NULL
       ,idCategorie bigint(20) NOT NULL
 )

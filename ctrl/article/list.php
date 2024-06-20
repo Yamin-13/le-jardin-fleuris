@@ -15,7 +15,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
 $dbConnection = getConnection($dbConfig);
 
 // Prépare la requête
-$query = 'SELECT article.id, article.name, article.typeOfArticle, article.image_filename, article.date, article.textOfArticle ';
+$query = 'SELECT article.id, article.name, article.image_filename, article.date, article.textOfArticle ';
 $query .= ' FROM article';
 $statement = $dbConnection->prepare($query);
 

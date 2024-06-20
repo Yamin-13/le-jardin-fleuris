@@ -15,10 +15,12 @@ INSERT INTO user (id, idRole, name, email, password) VALUES
 
 INSERT INTO categorie (id, name) VALUES
 (90, 'Fleurs')
+,(100, 'plante dinterieur')
+,(110, 'Le Jardin')
 ;
 
-INSERT INTO article (id, name, TypeOfArticle, textOfArticle, date, idUser, idCategorie) VALUES
-(50, 'Fleurs de Lys', 'Fleurs', 'Découvrez la fleur de Lys', '2024-06-20 16:00:00', 60, 90 )
+INSERT INTO article (id, name, textOfArticle, date, idUser, idCategorie) VALUES
+(50, 'Fleurs de Lys', 'Découvrez la fleur de Lys', '2024-06-20 16:00:00', 60, 90)
 ;
 
 INSERT INTO comment (id, textOfComment, date, idUser, idArticle) VALUES

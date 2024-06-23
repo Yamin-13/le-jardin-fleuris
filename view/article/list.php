@@ -9,8 +9,8 @@
 </head>
 
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
-<main>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
+    <main>
         <table>
             <thead>
                 <tr>
@@ -20,6 +20,8 @@
                     <th>Texte de l'article</th>
                     <th>Date</th>
                     <th>Image</th>
+                    <th>actions</th>
+
                 </tr>
             </thead>
 
@@ -37,6 +39,9 @@
                             <?php if (!empty($article['image_filename'])) : ?>
                                 <img src="/path/to/images/<?= htmlspecialchars($article['image_filename']) ?>" alt="Image">
                             <?php endif; ?>
+                        </td>
+                        <td>
+                            <a href="/ctrl/article/delete.php?id=<?= $article['id'] ?>" onclick="return confirm('Confirmer la suppression')"><button class="buttonDelete"><img class="iconeCorbeille" src="/asset/img/corbeille.png" alt=""></button></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

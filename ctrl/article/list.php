@@ -1,19 +1,14 @@
 <?php
-
-require_once $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/article.php';
-session_start();
-
 // Liste les Articles
-
-// Définit les clés de dictionnaire de la page
-$pageTitle = 'Liste des Articles';
 
 // Ouvre une connexion à la BDD
 require_once $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/article.php';
 $dbConnection = getConnection($dbConfig);
+
+session_start();
+$pageTitle = 'Liste des Articles';
 
 // Prépare la requête
 $query = 'SELECT article.id, article.name, article.image_filename, article.date, article.textOfArticle ';

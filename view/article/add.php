@@ -9,9 +9,9 @@
 </head>
 
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
-<main>
-        <form action="/ctrl/article/add.php" method="post">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
+    <main>
+        <form action="/ctrl/article/add.php" method="post" enctype="multipart/form-data">
 
 
             <div>
@@ -24,15 +24,16 @@
                 <textarea id="textOfArticle" name="textOfArticle"></textarea>
             </div>
 
-            <div>
-                <label for="idUser">Nom de l'idUser :</label>
-                <input type="text" id="idUser" name="idUser">
+            <div class="input-box">
+                <input type="file" id="image_filename" name="image_filename" class="inputfile" onchange="updateFileName()">
+                <label for="image_filename" class="inputfile-label">Votre avatar</label>
+                <span id="file-name" class="file-name">Aucun fichier sélectionné</span>
             </div>
 
-            <div>
+            <!-- <div>
                 <label for="image_filename">Fichier image :</label>
                 <input type="file" id="image_filename" name="image_filename">
-            </div>
+            </div> -->
             <!-- idCategorie -->
             <div>
                 <label for="categorie">Catégorie</label>

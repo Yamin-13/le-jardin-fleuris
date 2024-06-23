@@ -3,6 +3,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/article.php';
+session_start();
 
 // Liste les Articles
 

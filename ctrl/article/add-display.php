@@ -5,6 +5,7 @@ $titrePage = "Le Jardin Fleuris";
 require_once $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
 $dbConnection = getConnection($dbConfig);
+session_start();
 
 // - Prépare la requête
 $query = 'SELECT categorie.id, categorie.name';

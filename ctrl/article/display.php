@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $titrePage = "Le Jardin Fleuris";
 
 

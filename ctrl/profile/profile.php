@@ -7,6 +7,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/user.php';
 session_start();
 
 // rend la vue
-include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header-2.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/view/profile/profile.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/footer.php';

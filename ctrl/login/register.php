@@ -30,7 +30,7 @@ $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // PASSWORD_BCRYPT 
 // var_dump($password); // Mp en clair
 // var_dump($hashedPassword); // Mp haché
 
-$idRole = 20; // ca donne un role pour les nouveaux utilisateurs (sampleUser)
+$idRole = 30; // ca donne un role pour les nouveaux utilisateurs (sampleUser)
 
 
 

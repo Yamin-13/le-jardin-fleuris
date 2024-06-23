@@ -19,14 +19,8 @@ $isLoggedIn = isset($_SESSION['user']); ?>
         <ul>
             <li><a href="/ctrl/article/display.php">Accueil</a></li>
             <li><a href="/ctrl/login/welcome.php">Welcome</a></li>
-            <li><a href="/ctrl/nosProduits.php">Nos Produits</a></li>
-            <li><a class="header_link" href="/ctrl/article/list.php">liste des articles</a></li>
-            <li><a class="header_link" href="/ctrl/article/add-display.php">Ajouter des articles</a></li>
-
-
-            <?php if ($isLoggedIn && $_SESSION['user']['idRole'] == '10') : ?> <!-- cache le lien Nos secret si l'utilisateur n'a pas le role admin -->
-                <li><a href="/ctrl/login/secret.php">Secrets</a></li>
-            <?php endif; ?>
+            <li><a href="/ctrl/nosProduits.php">Nos Articles</a></li>
+          
         </ul>
     </nav>
     <?php if ($isLoggedIn) : ?>

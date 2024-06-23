@@ -11,11 +11,10 @@
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
 
-    <h2 class="secretMessage">Secrets Trouvés, <?=($_SESSION['user']['email']) ?>!!!!</h2>
+    <h2 class="secretMessage">Bonjour Administrateur, <?= ($_SESSION['user']['email']) ?>.</h2>
     <main>
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="/asset/img/eurosBillet.mp4" type="video/mp4">
-        </video>
+        <li><a class="header_link" href="/ctrl/article/list.php">liste des articles</a>
+        <li><a class="header_link" href="/ctrl/article/add-display.php">Ajouter un article</a>
     </main>
 
 </body>

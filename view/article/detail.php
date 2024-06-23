@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/asset/css/style.css">
+    <link rel="stylesheet" href="/asset/style.css">
 
     <title><?= $titrePage ?></title>
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
-    <main>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
+<main>
         <article>
             <h1><?= htmlspecialchars($article['name']) ?></h1>
             <p>Catégorie : <?= htmlspecialchars($article['categorieName']) ?></p>

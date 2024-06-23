@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Retourne une connexion à la base de données.
+ * retourne une connexion à la base de données.
  * 
  * @param array $params Paramètres de connexion (host, port, ...)
  * 
@@ -17,4 +17,17 @@ function getConnection(array $params) : PDO
 
     return $connection;
 }
+// function getUser($email, $password) : bool 
+
+//     try{
+// $params = [
+//     'host' => 'localhost'
+//     ,'port' => '4000'
+//     , 'dbname' => '430-php-login-YAO'
+//     ,'user' => 'root'
+//     ,'password' => '' 
+// ];
+    
+    // (＃｀д´)ﾉ 彡┻━┻ 
+
 

@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php'; 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php'; 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/article.php'; 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/comment.php';
 session_start();
 
 $titrePage = "Le Jardin Fleuris";

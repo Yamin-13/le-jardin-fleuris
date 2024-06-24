@@ -1,9 +1,9 @@
 -- - Supprime la base de données si elle existe déjà
 -- - Crée la base de données
 -- - Mentionne le nom de la base de données à utiliser pour exécuter les commandes SQL qui suivent
-DROP DATABASE IF EXISTS `510-blog-ecf-YAO`;
-CREATE DATABASE IF NOT EXISTS `510-blog-ecf-YAO`;
-USE `510-blog-ecf-YAO`;
+DROP DATABASE IF EXISTS `520-blog-ecf-YAO`;
+CREATE DATABASE IF NOT EXISTS `520-blog-ecf-YAO`;
+USE `520-blog-ecf-YAO`;
 
 -- -------------
 -- TABLES
@@ -47,11 +47,12 @@ CREATE TABLE article (
 CREATE TABLE comment (
   id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY
   ,textOfComment varchar(500) NOT NULL
-  ,date timestamp NOT NULL
+  ,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   ,idUser bigint(20) NOT NULL
   ,idArticle bigint(20) NOT NULL
 )
 ;
+
 
 -- ----------
 -- CONTRAINT

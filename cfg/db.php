@@ -4,7 +4,7 @@
 $dbConfig[] = [];
 // $dbConfig['host'] = '127.0.0.1';
 $dbConfig['port'] = '3306';
-$dbConfig['dbname'] = '510-blog-ecf-YAO';
+$dbConfig['dbname'] = '520-blog-ecf-YAO';
 $dbConfig['user'] = 'root';
 $dbConfig['password'] = '';
 

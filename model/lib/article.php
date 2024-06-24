@@ -64,3 +64,13 @@ function getArticleById($id)
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
+function getArticlesByCategory($dbConnection) {
+    $query = 'SELECT a.id, a.name as articleName, a.date, a.textOfArticle, a.image_filename, c.name as categoryName
+              FROM article a
+              JOIN categorie c ON a.idCategorie = c.id
+              ORDER BY c.name, a.date DESC';
+    $statement = $dbConnection->prepare($query);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}

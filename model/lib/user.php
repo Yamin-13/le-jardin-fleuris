@@ -47,3 +47,13 @@ function getUser(string $email, string $password, PDO $db)
         return null;
     }
 }
+
+function updateUserProfile($idUser, $email, $avatarFilename, $dbConnection) {
+    $query = 'UPDATE user SET email = :email, avatar_filename = :avatar_filename WHERE id = :id';
+    $statement = $dbConnection->prepare($query);
+    $statement->bindParam(':email', $email);
+    $statement->bindParam(':avatar_filename', $avatarFilename);
+    $statement->bindParam(':id', $idUser);
+    $statement->execute();
+}
+

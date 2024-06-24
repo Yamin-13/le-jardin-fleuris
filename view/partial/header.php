@@ -18,9 +18,9 @@ $isLoggedIn = isset($_SESSION['user']); ?>
     <nav>
         <ul>
             <li><a href="/ctrl/article/display.php">Accueil</a></li>
-            <li><a href="/ctrl/login/welcome.php">Welcome</a></li>
-            <li><a href="/ctrl/nosProduits.php">Nos Articles</a></li>
-          
+            <li><a href="/ctrl/login/welcome.php">Bienvenue</a></li>
+            <li><a href="/ctrl/article/categorieArticle.php">Nos Articles</a></li>
+
         </ul>
     </nav>
     <?php if ($isLoggedIn) : ?>

@@ -1,5 +1,5 @@
 -- Mentionne le nom de la base de données à utiliser pour exécuter les commandes SQL qui suivent.
-USE `510-blog-ecf-YAO`;
+USE `520-blog-ecf-YAO`;
 
 INSERT INTO role (id, code, label ) VALUES
      (10, 'ADM', 'Admin')

@@ -10,6 +10,7 @@ $dbConnection = getConnection($dbConfig);
 session_start();
 $pageTitle = 'Liste des Articles';
 
+
 // Prépare la requête
 $query = 'SELECT article.id, article.name, article.image_filename, article.date, article.textOfArticle ';
 $query .= ' FROM article';
@@ -19,5 +20,13 @@ $statement = $dbConnection->prepare($query);
 $successOrFailure = $statement->execute();
 $listArticle = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-// Rends la vue
+$idRole = $_SESSION['user']['idRole'];
+if ($idRole == 10){
+    // Rends la vue
 include $_SERVER['DOCUMENT_ROOT'] . '/view/Article/list.php';
+
+} else {
+    // rend la vue
+    header('Location: /ctrl/login/display.php');
+}
+

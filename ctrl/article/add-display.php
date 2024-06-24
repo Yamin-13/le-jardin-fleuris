@@ -11,9 +11,17 @@ session_start();
 $query = 'SELECT categorie.id, categorie.name';
 $query .= ' FROM categorie';
 $statement = $dbConnection->prepare($query);
+
 // - Exécute la requête
 $successOrFailure = $statement->execute();
 $listCategorie = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-// rend la vue
+$idRole = $_SESSION['user']['idRole'];
+if ($idRole == 10 || $idRole == 20 ){
+    // rend la vue
 include $_SERVER['DOCUMENT_ROOT'] . '/view/article/add.php';
+
+} else {
+    // rend la vue
+    header('Location: /ctrl/login/display.php');
+}

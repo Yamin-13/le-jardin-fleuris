@@ -55,7 +55,7 @@ function create(string $name, string $textOfArticle, string $date, string $image
 function getArticleById($id)
 {
     global $dbConnection;
-    $stmt = $dbConnection->prepare("SELECT article.id, article.name, article.textOfArticle, article.date, article.image_filename, categorie.name AS categorieName 
+    $stmt = $dbConnection->prepare("SELECT article.id, article.name, article.idUser, article.textOfArticle, article.date, article.image_filename, categorie.name AS categorieName 
 
     -- jointure avec la table categorie pour récupérer le nom de la catégorie
     FROM article 

@@ -21,6 +21,7 @@ const LIST_ACCEPTED_FILE_TYPE = [MY_IMG_PNG, MY_IMG_JPG];
 const FILE_MAX_SIZE = 10;
 
 // récupére les informations du formulaire...
+$name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -73,11 +74,12 @@ $uploadPath = $uploadDirectory . basename($fileName);
 $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 
 // Fonction pour ajouter un utilisateur à la bases de données
-function addUser($email, $password, $idRole, $db, $fileName)
+function addUser($name, $email, $password, $idRole, $db, $fileName)
 {
-    $query = 'INSERT INTO user ( email, password, idRole, avatar_filename) VALUES ( :email, :password, :idRole, :avatar_filename)'; // requete SQL avec les parametres pour insérer un nouvel utilisateur dans la table...
+    $query = 'INSERT INTO user (name, email, password, idRole, avatar_filename) VALUES ( :name, :email, :password, :idRole, :avatar_filename)'; // requete SQL avec les parametres pour insérer un nouvel utilisateur dans la table...
     $statement = $db->prepare($query);   // prepare la requete SQL ele retourne un objet PDOstatement                               // ...user avec les 3 collones 
 
+    $statement->bindParam(':name', $name); 
     $statement->bindParam(':idRole', $idRole);       //  <----------------------------- // ca lie la valeeur de $idRole au parametre ":idRole" dans la requête SQL ($idRole = :idRole ) 
     $statement->bindParam(':email', $email);        // methode PDOStatement::bindParam // (sécurisé)
     $statement->bindParam(':password', $password); //                                 //
@@ -87,7 +89,7 @@ function addUser($email, $password, $idRole, $db, $fileName)
 
 }
 // condition pour affiché les messages de succès ou d'échec
-if (addUser($email, $hashedPassword, $idRole, $dbConnection, $fileName)) {  // Apel de la fonction addUser avec les 4 arguments  
+if (addUser($name, $email, $hashedPassword, $idRole, $dbConnection, $fileName)) {  // Apel de la fonction addUser avec les 4 arguments  
     $_SESSION['success'] = 'Inscription réussie.<br>Vous pouvez maintenant vous connecter.'; // le message sera stocké dans la variable de session "succes" 
     header('Location: /ctrl/login/display.php');
     exit(); // ca arrete l'execution du script ici

@@ -43,7 +43,7 @@
                 <div>
                     <p><strong><?= htmlspecialchars($comment['name']) ?></strong> a commenté le <?= htmlspecialchars($comment['date']) ?></p>
                     <p><?= nl2br(htmlspecialchars($comment['textOfComment'])) ?></p>
-                    <?php if ($_SESSION['user']['id'] == $comment['idUser'] || $_SESSION['user']['idRole'] == '10'): ?>
+                    <?php if (isset($_SESSION['user']) && ($_SESSION['user']['id'] == $comment['idUser'] || $_SESSION['user']['idRole'] == '10')): ?>
                         <a href="/ctrl/article/comment.php?action=delete&id=<?= htmlspecialchars($comment['id']) ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?');">
                             <button class="buttonDelete">Supprimer</button>
                         </a>

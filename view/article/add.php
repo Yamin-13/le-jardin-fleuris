@@ -30,10 +30,6 @@
                 <span id="file-name" class="file-name">Aucun fichier sélectionné</span>
             </div>
 
-            <!-- <div>
-                <label for="image_filename">Fichier image :</label>
-                <input type="file" id="image_filename" name="image_filename">
-            </div> -->
             <!-- idCategorie -->
             <div>
                 <label for="categorie">Catégorie</label>

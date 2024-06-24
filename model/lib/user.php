@@ -12,7 +12,7 @@
 function getUser(string $email, string $password, PDO $db)
 {
     // - Prépare la requête
-    $query = 'SELECT user.id, user.email, user.password, user.idRole, avatar_filename';
+    $query = 'SELECT user.name, user.id, user.email, user.password, user.idRole, avatar_filename';
     $query .= ' FROM user';
     $query .= ' WHERE user.email = :email ';
     $statement = $db->prepare($query);
@@ -48,9 +48,10 @@ function getUser(string $email, string $password, PDO $db)
     }
 }
 
-function updateUserProfile($idUser, $email, $avatarFilename, $dbConnection) {
-    $query = 'UPDATE user SET email = :email, avatar_filename = :avatar_filename WHERE id = :id';
+function updateUserProfile($name, $idUser, $email, $avatarFilename, $dbConnection) {
+    $query = 'UPDATE user SET name = :name, email = :email, avatar_filename = :avatar_filename WHERE id = :id';
     $statement = $dbConnection->prepare($query);
+    $statement->bindParam(':name', $name);
     $statement->bindParam(':email', $email);
     $statement->bindParam(':avatar_filename', $avatarFilename);
     $statement->bindParam(':id', $idUser);

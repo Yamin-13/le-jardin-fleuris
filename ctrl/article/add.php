@@ -85,7 +85,7 @@ $dbConnection = getConnection($dbConfig);
 $isSuccess = create($article['name'], $article['textOfArticle'], $article['date'], $article['image_filename'], $article['idCategorie'], $article['idUser'], $dbConnection);
 
 if ($isSuccess) {
-    header('Location: /ctrl/article/list.php');
+    header('Location: /ctrl/article/categorieArticle.php');
     exit;
 } else {
     die('La création de l\'article a échoué.');

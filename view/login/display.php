@@ -62,9 +62,9 @@
                 <div class="form-wrapper register">
                     <form action="/ctrl/login/register.php" method="post" enctype="multipart/form-data">
                         <h2>Inscription</h2>
-                        <!-- <div class="input-box">
-                            <input type="text" placeholder="Nom prénom">
-                        </div> -->
+                        <div class="input-box">
+                            <input type="text" name="name" placeholder="Nom">
+                        </div>
                         <div class="input-box">
                             <input type="text" name="email" placeholder="Email" required>
                         </div>

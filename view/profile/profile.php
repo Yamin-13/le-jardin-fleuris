@@ -6,6 +6,7 @@
     <section>
         <h2>Informations du profil</h2>
         <p><strong>Email :</strong> <?= htmlspecialchars($_SESSION['user']['email']) ?></p>
+        <p><strong>Nom :</strong> <?= htmlspecialchars($_SESSION['user']['name']) ?></p>
     </section>
     <section>
         <h2>Mettre à jour le profil</h2>
@@ -13,6 +14,10 @@
             <div>
                 <label for="email">Nouvel Email :</label>
                 <input type="text" id="email" name="email" value="<?= htmlspecialchars($_SESSION['user']['email']) ?>" >
+            </div>
+            <div>
+                <label for="name">Nouveeau Nom :</label>
+                <input type="text" id="name" name="name" value="<?= htmlspecialchars($_SESSION['user']['name']) ?>" >
             </div>
             <div>
                 <label for="avatar">Nouveau Avatar :</label>

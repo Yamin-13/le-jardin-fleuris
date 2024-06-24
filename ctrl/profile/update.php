@@ -6,6 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/user.php';
 
 $idUser = $_SESSION['user']['id'];
+$newName = $_POST['name'];
 $newEmail = $_POST['email'];
 $avatarFilename = $_SESSION['user']['avatar_filename'];
 
@@ -22,9 +23,10 @@ if (!empty($_FILES['avatar']['name'])) {
 
 // Mise à jour de l'utilisateur dans la base de données
 $dbConnection = getConnection($dbConfig);
-updateUserProfile($idUser, $newEmail, $avatarFilename, $dbConnection);
+updateUserProfile($newName ,$idUser, $newEmail, $avatarFilename, $dbConnection);
 
 // Mise à jour des informations de session
+$_SESSION['user']['name'] = $newName;
 $_SESSION['user']['email'] = $newEmail;
 $_SESSION['user']['avatar_filename'] = $avatarFilename;
 

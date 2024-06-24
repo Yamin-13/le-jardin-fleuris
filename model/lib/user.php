@@ -57,3 +57,9 @@ function updateUserProfile($idUser, $email, $avatarFilename, $dbConnection) {
     $statement->execute();
 }
 
+function getAllUsers($dbConnection) {
+    $query = 'SELECT id, name, email, idRole FROM user';
+    $statement = $dbConnection->prepare($query);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}

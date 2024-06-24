@@ -13,8 +13,9 @@
 
     <h2 class="secretMessage">Bonjour Administrateur, <?= ($_SESSION['user']['email']) ?>.</h2>
     <main>
-        <li><a class="header_link" href="/ctrl/article/list.php">liste des articles</a>
+        <li><a class="header_link" href="/ctrl/article/list.php">Liste des articles</a>
         <li><a class="header_link" href="/ctrl/article/add-display.php">Ajouter un article</a>
+        <li><a class="header_link" href="/ctrl/profile/adminUser.php">Supprimer un utilisateur</a>
     </main>
 
 </body>

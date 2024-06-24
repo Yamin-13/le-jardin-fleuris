@@ -47,7 +47,7 @@ CREATE TABLE article (
 CREATE TABLE comment (
   id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY
   ,textOfComment varchar(500) NOT NULL
-  ,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  ,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   ,idUser bigint(20) NOT NULL
   ,idArticle bigint(20) NOT NULL
 )
@@ -73,7 +73,17 @@ ADD CONSTRAINT `fk_article_user` FOREIGN KEY(IdUser) REFERENCES user(id)
 ,ADD CONSTRAINT `fk_article_categorie` FOREIGN KEY(idCategorie) REFERENCES categorie(id)
 ;
 
+-- change la contrainte pour une suppression en cascade
+ALTER TABLE article DROP FOREIGN KEY fk_article_user;
+ALTER TABLE article ADD CONSTRAINT fk_article_user FOREIGN KEY (idUser) REFERENCES user(id) ON DELETE CASCADE;
+
 ALTER TABLE comment
 ADD CONSTRAINT `fk_comment_user` FOREIGN KEY(IdUser) REFERENCES user(id)
 ,ADD CONSTRAINT `fk_comment_article` FOREIGN KEY(idArticle) REFERENCES article(id)  
 ;
+
+-- supprime la contrainte existante
+ALTER TABLE comment DROP FOREIGN KEY fk_comment_user;
+
+--  ca ajoute une nouvelle contrainte avec ON DELETE CASCADE
+ALTER TABLE comment ADD CONSTRAINT fk_comment_user FOREIGN KEY (idUser) REFERENCES user(id) ON DELETE CASCADE;

@@ -173,3 +173,67 @@
 .comment-actions .button-update:hover {
     background-color: #31b0d5;
 }
+
+/* modification des commentaires */
+
+.edit-comment-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f7f7f7;
+    font-family: 'Poppins', sans-serif;
+}
+
+.edit-comment-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.edit-comment-container h1 {
+    text-align: center;
+    color: var(--header-color);
+    margin-bottom: 20px;
+}
+
+.edit-comment-form .form-group {
+    margin-bottom: 20px;
+}
+
+.edit-comment-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.edit-comment-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--header-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #466d0e;
+}

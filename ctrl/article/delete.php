@@ -22,5 +22,5 @@ $successOrFailure = $statement->execute();
 
 
 
-// Redirige vers la liste des Navires
+// Redirige vers la liste des articles
 header('Location: ' . '/ctrl/article/list.php');

@@ -84,6 +84,8 @@ ADD CONSTRAINT `fk_comment_user` FOREIGN KEY(IdUser) REFERENCES user(id)
 
 -- supprime la contrainte existante
 ALTER TABLE comment DROP FOREIGN KEY fk_comment_user;
+ALTER TABLE comment DROP FOREIGN KEY fk_comment_article;
 
 --  ca ajoute une nouvelle contrainte avec ON DELETE CASCADE
 ALTER TABLE comment ADD CONSTRAINT fk_comment_user FOREIGN KEY (idUser) REFERENCES user(id) ON DELETE CASCADE;
+ALTER TABLE comment ADD CONSTRAINT fk_comment_article FOREIGN KEY (idArticle) REFERENCES article(id) ON DELETE CASCADE;

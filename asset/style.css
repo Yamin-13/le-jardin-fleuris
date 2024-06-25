@@ -3,7 +3,7 @@
 @import url(./footer.css);
 @import url(./admin.css);
 @import url(./profil.css);
-@import url(./accueil.css);
+/* @import url(./accueil.css); */
 @import url(./categorie.css);
 @import url(./details.css);
 @import url(./secret.css);
@@ -16,7 +16,7 @@
     --input-color: #323946;
     --text-color: #444;
     --button-color: #d33a20; */
-    --header-color: #54880e;
+    --header-color: #195c07;
 }
 
 * {
@@ -30,7 +30,6 @@
 
 main {
     flex-grow: 1;
-    padding-left: 16px;
 }
 /* =================================================================== */
 .welcome{

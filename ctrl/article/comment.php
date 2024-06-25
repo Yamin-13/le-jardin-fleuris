@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !$action) {
     $commentId = $_GET['id'];
     $comment = getCommentById($commentId, $dbConnection);
 
-    if ($comment && ($comment['idUser'] == $_SESSION['user']['id'] || $_SESSION['user']['role'] == 'admin')) {
+    if ($comment && ($comment['idUser'] == $_SESSION['user']['id'] || $_SESSION['user']['idRole'] == '10')) {
         deleteComment($commentId, $dbConnection);
     }
 
@@ -61,4 +61,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !$action) {
     exit;
 }
 
-?>
+

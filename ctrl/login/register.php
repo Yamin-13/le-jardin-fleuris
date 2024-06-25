@@ -58,7 +58,6 @@ if ($hasErrors) {
 }
 
 // Redimensionne l'image
-// WARN! sudo apt install php-gd
 $imgOriginal;
 if ($fileType == MY_IMG_PNG) {
     $imgOriginal = imagecreatefrompng($fileTmpName);

@@ -22,12 +22,12 @@
             endif;
             ?>
             <div class="article-card">
-                <h3 class="article-title"><?= htmlspecialchars($article['articleName']) ?></h3>
-                <p class="article-date">Posté le : <?= htmlspecialchars($article['date']) ?></p>
+                <h3 class="article-title-categorie"><?= htmlspecialchars($article['articleName']) ?></h3>
+                <p class="article-date-categorie">Posté le : <?= htmlspecialchars($article['date']) ?></p>
                 <?php if (!empty($article['image_filename'])): ?>
-                    <img class="article-image" src="/upload/<?= htmlspecialchars($article['image_filename']) ?>" alt="Image de l'article">
+                    <img class="image-categorie" src="/upload/<?= htmlspecialchars($article['image_filename']) ?>" alt="Image de l'article">
                 <?php endif; ?>
-                <p class="article-text"><?= nl2br(htmlspecialchars($article['textOfArticle'])) ?></p>
+                <p class="article-text-categorie"><?= htmlspecialchars(mb_strimwidth($article['textOfArticle'], 0, 200, '...')) ?></p>
                 <a class="read-more" href="/ctrl/article/details.php?id=<?= htmlspecialchars($article['id']) ?>">Lire plus</a>
             </div>
         <?php

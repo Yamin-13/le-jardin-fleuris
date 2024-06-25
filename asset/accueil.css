@@ -1,0 +1,199 @@
+/* Variables CSS */
+:root {
+    --bg-color: #fdfdfd;
+    --text-color: #444;
+    --primary-color: #54880e;
+    --secondary-color: #f7f7f7;
+    --button-hover-color: #466d0e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Styles pour la section héro */
+.hero-section {
+    position: relative;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: 'Great Vibes', cursive;
+}
+
+.welcome-title {
+    font-family: 'Great Vibes', cursive;
+   font-size: 5.5em;
+    margin: 0;
+}
+
+.welcome-message p {
+    font-size: 1.7em;
+    margin-top: 10px;
+}
+
+/* Styles pour la section des derniers articles */
+.latest-articles-section {
+    padding: 50px 10%;
+    background-color: var(--secondary-color);
+}
+
+.latest-articles-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.articles-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.articles-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.article-card {
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: inline-block;
+    white-space: normal;
+    max-width: 300px;
+}
+
+.article-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-card h3 {
+    font-size: 1.5em;
+    margin: 15px;
+    color: var(--text-color);
+    text-overflow: ellipsis; /*points de suspension */  
+    -webkit-line-clamp: 3; 
+}
+
+.article-card p {
+    margin: 15px;
+    color: #666;
+}
+
+.read-more-btn {
+    display: block;
+    margin: 15px;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.read-more-btn:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Styles pour les contrôles du carrousel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    width: 3.25rem;
+    height: 3.25rem;
+    
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Styles pour le footer */
+footer {
+    color: white;
+    padding: 40px 10%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1em;
+    color: white;
+    line-height: 1.6;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+/* supprime la barre de défilement sur firefox */
+.articles-wrapper::-webkit-scrollbar {
+    display: none;
+}

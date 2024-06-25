@@ -13,63 +13,47 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
 
     <main>
+        <div class="update-article-container">
+            <h1>Modifier l'article</h1>
+            <form action="/ctrl/article/update.php" method="post" enctype="multipart/form-data" class="update-article-form">
 
-        <form action="/ctrl/article/update.php" method="post">
+                <!-- Id -->
+                <input type="hidden" name="id" value="<?= $article['id'] ?>">
 
-            <!-- Id -->
-            <input type="hidden" name="id" value="<?= $article['id'] ?>">
+                <div class="form-group">
+                    <label for="name">Nom de l'article</label>
+                    <input type="text" name="name" id="name" value="<?= htmlspecialchars($article['name']) ?>" required>
+                </div>
 
-            <!-- Numero IMO -->
-            <div>
-                <label for="name">Nom de l'article</label>
-                <input type="text" name="name" id="name" value="<?= $article['name'] ?>">
-            </div>
+                <div class="form-group">
+                    <label for="textOfArticle">Texte de l'article</label>
+                    <textarea name="textOfArticle" id="textOfArticle" required><?= htmlspecialchars($article['textOfArticle']) ?></textarea>
+                </div>
 
-            <!-- Nom -->
-            <div>
-                <label for="textOfArticle">Texte de l'article</label>
-                <input type="text" name="textOfArticle" id="textOfArticle" value="<?= $article['textOfArticle'] ?>">
-            </div>
+                <div class="form-group">
+                    <label for="image_filename">Image de l'article</label>
+                    <input type="file" name="image_filename" id="image_filename" class="inputfile">
+                    <label for="image_filename" class="inputfile-label">Choisir un fichier</label>
+                    <span class="file-name"><?= htmlspecialchars($article['image_filename']) ?></span>
+                </div>
 
-            <div>
-                <label for="image_filename">image_filename</label>
-                <input type="file" name="image_filename" id="image_filename" value="<?= $article['image_filename'] ?>">
-            </div>
+                <div class="form-group">
+                    <label for="idCategorie">Catégorie</label>
+                    <select name="idCategorie" id="idCategorie" required>
+                        <?php foreach ($listCategorie as $categorie) { ?>
+                            <?php $isSelectedMsg = ($article['idCategorie'] == $categorie['id']) ? 'selected' : ''; ?>
+                            <option value="<?= $categorie['id'] ?>" <?= $isSelectedMsg ?>><?= htmlspecialchars($categorie['name']) ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
 
-            <div>
-                <label for="idUser">idUser</label>
-                <input type="text" name="idUser" id="idUser" value="<?= $article['idUser'] ?>">
-            </div>
-
-
-            <!-- Service -->
-            <div>
-                <label for="categorie">Catégorie</label>
-                <select name="idCategorie" id="idCategorie">
-                    <?php foreach ($listCategorie as $categorie) { ?>
-
-                        <?php
-
-                        // Quand l'option correspond à la categorie de l'article à modifier,
-                        // lui ajoute l'attribut 'selected'
-                        $isSelectedMsg = '';
-                        if ($article['idCategorie'] == $categorie['id']) {
-                            $isSelectedMsg = 'selected';
-                        }
-                        ?>
-
-                        <option value="<?= $categorie['id'] ?>" <?= $isSelectedMsg ?>><?= $categorie['name'] ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <?= var_dump($_GET); ?>
-            <div class="submit">
-                <button type="submit">Modifier</button>
-            </div>
-        </form>
+                <div class="form-group submit">
+                    <button type="submit" class="btn-submit">Modifier</button>
+                </div>
+            </form>
+        </div>
     </main>
 
 </body>
 
 </html>
-

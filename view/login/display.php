@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/asset/style.css">
     <title><?= $titrePage ?></title>
 </head>
-<!-- mot de passe de bob l'admin hashé : $2y$10$eO1EhZvLXRmyfB4f0tl1pe/oxTmMQJeJGblfWYSHAi.KJtNfAOm9W -->
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main>
@@ -32,7 +31,7 @@
                         <!-- <div class="forgot-pass">
                     <a href="#">Mot de passe oublié?</a>
                 </div> -->
-                        <button type="submit">S'Identifier</button>
+                        <button class="submit-form" type="submit">S'Identifier</button>
                         <div class="sign-link">
                             <p>Pas encore inscrits? <a href="#" onclick="registerActive()">Inscription</a></p>
                         </div>
@@ -77,7 +76,7 @@
                             <span id="file-name" class="file-name">Aucun fichier sélectionné</span>
                         </div>
                         <script>updateFileName()</script>
-                        <button type="submit">Inscription</button>
+                        <button class="submit-form" type="submit">Inscription</button>
                         <div class="sign-link">
                             <p>Déjà Inscrits? <a href="#" onclick="loginActive()">S'Identifier</a></p>
                         </div>

@@ -74,3 +74,11 @@ function getArticlesByCategory($dbConnection) {
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getLatestArticles(PDO $db, $limit = 5) {
+    $query = 'SELECT id, name, textOfArticle, image_filename FROM article ORDER BY date DESC LIMIT :limit';
+    $statement = $db->prepare($query);
+    $statement->bindParam(':limit', $limit, PDO::PARAM_INT);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}

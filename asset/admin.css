@@ -106,4 +106,57 @@
     height: 16px;
 }
 
+/* Styles pour la page de gestion des utilisateurs ================ */
+.user-management-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-management-container h1 {
+    font-size: 2em;
+    color: #54880e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-management-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.user-management-table th,
+.user-management-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-management-table th {
+    background-color: #54880e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.user-management-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.user-management-table td a button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-management-table td a button:hover {
+    background-color: #c9302c;
+}
 

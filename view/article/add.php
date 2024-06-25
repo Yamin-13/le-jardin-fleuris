@@ -1,50 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/asset/style.css">
-    <title><?= $titrePage ?></title>
+    <title><?= htmlspecialchars($titrePage) ?></title>
 </head>
-
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
-    <main>
-        <form action="/ctrl/article/add.php" method="post" enctype="multipart/form-data">
-
-
-            <div>
+    <main class="add-article-container">
+        <h1>Ajouter un article</h1>
+        <form action="/ctrl/article/add.php" method="post" enctype="multipart/form-data" class="add-article-form">
+            <div class="form-group">
                 <label for="name">Nom de l'article :</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" required>
             </div>
-
-            <div>
+            <div class="form-group">
                 <label for="textOfArticle">Texte de l'article :</label>
-                <textarea id="textOfArticle" name="textOfArticle"></textarea>
+                <textarea id="textOfArticle" name="textOfArticle" required></textarea>
             </div>
-
-            <div class="input-box">
-                <input type="file" id="image_filename" name="image_filename" class="inputfile" onchange="updateFileName()">
-                <label for="image_filename" class="inputfile-label">Votre avatar</label>
+            <div class="form-group input-box">
+                <input type="file" id="image_filename" name="image_filename" class="inputfile" onchange="updateFileName()" required>
+                <label for="image_filename" class="inputfile-label">Choisir une image</label>
                 <span id="file-name" class="file-name">Aucun fichier sélectionné</span>
             </div>
-
-            <!-- idCategorie -->
-            <div>
-                <label for="categorie">Catégorie</label>
-                <select name="idCategorie" id="categorie">
+            <div class="form-group">
+                <label for="categorie">Catégorie :</label>
+                <select name="idCategorie" id="categorie" required>
                     <?php foreach ($listCategorie as $categorie) { ?>
-                        <option value="<?= $categorie['id'] ?>"><?= $categorie['name'] ?></option>
+                        <option value="<?= $categorie['id'] ?>"><?= htmlspecialchars($categorie['name']) ?></option>
                     <?php } ?>
                 </select>
             </div>
-
-            <div>
-                <button type="submit">Ajouter l'Article</button>
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Ajouter l'Article</button>
             </div>
         </form>
     </main>
 </body>
-
 </html>

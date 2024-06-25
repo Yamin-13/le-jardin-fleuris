@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
-    <main>
-        <h1>Articles par catégorie</h1>
+    <main class="main-categories">
+        <h1 class="page-title">Articles par catégorie</h1>
         <?php
         $currentCategory = '';
         foreach ($articlesByCategory as $article):
@@ -17,18 +17,18 @@
                     echo '</div>'; // Ferme la catégorie précédente
                 endif;
                 $currentCategory = $article['categoryName'];
-                echo '<h2>' . htmlspecialchars($currentCategory) . '</h2>';
+                echo '<h2 class="category-title">' . htmlspecialchars($currentCategory) . '</h2>';
                 echo '<div class="category-articles">';
             endif;
             ?>
-            <div class="article">
-                <h3><?= htmlspecialchars($article['articleName']) ?></h3>
-                <p>Posté le : <?= htmlspecialchars($article['date']) ?></p>
+            <div class="article-card">
+                <h3 class="article-title"><?= htmlspecialchars($article['articleName']) ?></h3>
+                <p class="article-date">Posté le : <?= htmlspecialchars($article['date']) ?></p>
                 <?php if (!empty($article['image_filename'])): ?>
-                    <img src="/upload/<?= htmlspecialchars($article['image_filename']) ?>" alt="Image de l'article" style="width: 150px; height: auto;">
+                    <img class="article-image" src="/upload/<?= htmlspecialchars($article['image_filename']) ?>" alt="Image de l'article">
                 <?php endif; ?>
-                <p><?= nl2br(htmlspecialchars($article['textOfArticle'])) ?></p>
-                <a href="/ctrl/article/details.php?id=<?= htmlspecialchars($article['id']) ?>">Lire plus</a>
+                <p class="article-text"><?= nl2br(htmlspecialchars($article['textOfArticle'])) ?></p>
+                <a class="read-more" href="/ctrl/article/details.php?id=<?= htmlspecialchars($article['id']) ?>">Lire plus</a>
             </div>
         <?php
         endforeach;
@@ -36,6 +36,7 @@
             echo '</div>'; // ferme la dernière catégorie
         endif;
         ?>
+
     </main>
 </body>
 </html>

@@ -4,15 +4,19 @@
 @import url(./admin.css);
 @import url(./profil.css);
 @import url(./accueil.css);
+@import url(./categorie.css);
+@import url(./details.css);
+@import url(./secret.css);
+@import url(./addArticle.css);
 
 
 /* variable css ========== */
 :root {
-    --bg-color: #f1f1f1;
+    /* --bg-color: #f1f1f1;
     --input-color: #323946;
     --text-color: #444;
-    --button-color: #d33a20;
-    --header-color: linear-gradient(100deg, #fd8230, #e9511c);
+    --button-color: #d33a20; */
+    --header-color: #54880e;
 }
 
 * {
@@ -22,11 +26,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+
 
 main {
     flex-grow: 1;

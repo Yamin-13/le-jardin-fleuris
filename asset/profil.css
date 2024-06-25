@@ -1,3 +1,115 @@
-.avatarTitle{
-    color: #467a28;
+/* Styles pour la page de profil */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.avatar-title {
+    font-size: 2em;
+    color: #54880e;
+    margin-bottom: 20px;
+}
+
+.avatar-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #54880e;
+}
+
+.profile-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.profile-info h2 {
+    font-size: 1.5em;
+    color: #54880e;
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.profile-update {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.profile-update h2 {
+    font-size: 1.5em;
+    color: #54880e;
+    margin-bottom: 20px;
+}
+
+.profile-update form div {
+    margin-bottom: 20px;
+}
+
+.profile-update label {
+    display: block;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.profile-update input[type="text"],
+.profile-update input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.update-button {
+    background-color: #54880e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+    background-color: #466a0c;
+}
+
+.gestion-admin {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.admin-link,
+.header-link {
+    display: inline-block;
+    background-color: #5bc0de;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.admin-link:hover,
+.header-link:hover {
+    background-color: #31b0d5;
 }

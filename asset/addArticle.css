@@ -1,0 +1,81 @@
+/* Styles pour la page d'ajout d'article */
+.add-article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.add-article-container h1 {
+    font-size: 2em;
+    color: #54880e;
+    margin-bottom: 20px;
+}
+
+.add-article-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.add-article-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.add-article-form input[type="text"],
+.add-article-form textarea,
+.add-article-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.add-article-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.input-box {
+    position: relative;
+}
+
+.inputfile {
+    display: none;
+}
+
+.inputfile-label {
+    display: inline-block;
+    background-color: #5bc0de;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-name {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #888;
+}
+
+.add-article-form .btn-submit {
+    background-color: #54880e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-article-form .btn-submit:hover {
+    background-color: #3e640a;
+}

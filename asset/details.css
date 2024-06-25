@@ -1,0 +1,175 @@
+/* Styles pour la page de détails de l'article */
+.article-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-details {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.article-title {
+    font-size: 2.5em;
+    color: #54880e;
+    margin-bottom: 20px;
+}
+
+.article-category {
+    font-size: 1.2em;
+    color: #38761d;
+    margin-bottom: 20px;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.article-content {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.article-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.article-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.button-delete,
+.button-update {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-delete {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.button-delete:hover {
+    background-color: #c9302c;
+}
+
+.button-update {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.button-update:hover {
+    background-color: #31b0d5;
+}
+
+.comment-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+.comment-form button {
+    background-color: #54880e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #466a0c;
+}
+
+.comments-section {
+    margin-top: 40px;
+}
+
+.comments-section h2 {
+    font-size: 2em;
+    color: #54880e;
+    margin-bottom: 20px;
+}
+
+.comment {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.comment-author {
+    font-size: 1em;
+    color: #38761d;
+    margin-bottom: 10px;
+}
+
+.comment-content {
+    font-size: 1.1em;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.comment-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.comment-actions .button-delete,
+.comment-actions .button-update {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-actions .button-delete {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.comment-actions .button-delete:hover {
+    background-color: #c9302c;
+}
+
+.comment-actions .button-update {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.comment-actions .button-update:hover {
+    background-color: #31b0d5;
+}

@@ -25,7 +25,7 @@ $isLoggedIn = isset($_SESSION['user']); ?>
     </nav>
     <?php if ($isLoggedIn) : ?>
         <div class="helloUserParent">
-            <p id="helloUser">Bonjour, <?= ($_SESSION['user']['email']) ?> </p>
+            <p id="helloUser">Bonjour, <?= ($_SESSION['user']['name']) ?> </p>
             <a href="/ctrl/profile/profile.php" class="imageAvatar">
                 <p><img class="imageAvatar" src="/upload/<?= $_SESSION['user']['avatar_filename'] ?>" /></p>
             </a><!---avatar  -->

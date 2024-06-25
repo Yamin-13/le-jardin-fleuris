@@ -1,0 +1,195 @@
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.wrapper {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: linear-gradient(100deg, #54880e, #f2f2f2);
+    border-radius: 50px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, .3);
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 3rem;
+    
+}
+
+.wrapper .text-right {
+    position: absolute;
+    top: 60px;
+    right: 130px;
+    color: #f2f2f2;
+    text-shadow: 0 0 20px rgba(0, 0, 0, .3);
+    font-size: 50px;
+    user-select: none;
+    font-family: 'Parisienne', cursive;
+}
+
+.wrapper img {
+    position: absolute;
+    right: -40px;
+    bottom: 1px;
+    width: 60%;
+
+}
+
+.wrapper .form-wrapper.login {
+    transition: .7s ease-in-out;
+    transition-delay: .7s;
+
+}
+
+.wrapper.active .form-wrapper.login {
+    transition-delay: 0s;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-wrapper.register {
+    position: absolute;
+    margin-top: 15px;
+    transform: translateX(-400px);
+    transition: .7s ease-in-out;
+}
+
+.wrapper.active .form-wrapper.register {
+    transition-delay: .7s;
+    transform: translateX(0);
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #f2f2f2;
+    margin-top: 20px;
+
+}
+
+.input-box {
+    position: relative;
+    width: 320px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #f2f2f2;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #f2f2f2;
+    padding: 0 20px 0 40px;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, .3);
+}
+
+.forgot-pass {
+    margin: -15px 0 15px 15px;
+}
+
+.forgot-pass a {
+    color: #f2f2f2;
+    font-size: .9em;
+    text-decoration: none;
+}
+
+.forgot-pass a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    background: #f2f2f2;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #54880e;
+    font-weight: 500;
+}
+
+.sign-link {
+    font-size: .9em;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.sign-link p {
+    color: #f2f2f2;
+}
+
+.sign-link p a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sign-link p a:hover {
+    text-decoration: underline;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    width: 90px; 
+}
+
+.inputfile-label {
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(145deg, #6cbf40, #4a8e2e);
+    box-shadow: 4px 4px 8px #467a28, -4px -4px 8px #72d148;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    position: relative;
+
+}
+
+.inputfile-label:hover {
+    background: linear-gradient(145deg, #4a8e2e, #6cbf40);
+    box-shadow: 2px 2px 4px #467a28, -2px -2px 4px #72d148;
+}
+
+.file-name {
+    font-size: 0.8em;
+    margin-left: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.error-message {
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+    font-weight: 600;
+    height: 10px;
+    width: 330px;
+}
+
+.messageInscription {
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(61, 31, 234);
+    /* font-weight: 600; */
+    height: 10px;
+}

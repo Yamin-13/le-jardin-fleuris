@@ -42,4 +42,4 @@ if ($article && ($article['idUser'] == $idUser || $idRole == '10')) {
 }
 
 // Redirige vers la liste des Navires
-header('Location: ' . '/ctrl/article/display.php');
+header('Location: ' . '/ctrl/article/categorieArticle.php');

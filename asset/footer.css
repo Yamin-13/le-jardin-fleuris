@@ -1,0 +1,30 @@
+footer {
+    padding: 16px;
+    background-color: #54880e;
+    font-weight: bold;
+    width: 100%;
+
+    ul {
+        display: flex;
+        width: 100%;
+
+
+        li {
+            list-style: none;
+
+        }
+
+        li.spacer {
+            flex-grow: 1;
+
+        }
+
+    }
+}
+.footerTitle{
+    color: white;
+}
+
+#listMessage {
+    color: rgb(85, 8, 8);
+}

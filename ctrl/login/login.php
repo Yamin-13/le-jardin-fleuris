@@ -10,8 +10,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 // ca récupére les informations d'identification du formulaire envoyé par POST
 $form = [];
-$form['email'] = $_POST['email'];
-$form['password'] = $_POST['password'];
+$form['email'] = htmlspecialchars($_POST['email']);
+$form['password'] = htmlspecialchars($_POST['password']);
 
 // ca se connecte à la base de données avec ces parametres
 $dbConnection = getConnection($dbConfig);

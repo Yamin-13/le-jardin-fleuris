@@ -37,7 +37,7 @@ CREATE TABLE article (
       id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY
       ,name varchar(50) NOT NULL
       ,date timestamp NOT NULL
-      ,textOfArticle varchar(500) NOT NULL
+      ,textOfArticle varchar(1500) NOT NULL
       ,image_filename varchar(255)
       ,idUser bigint(20) NOT NULL
       ,idCategorie bigint(20) NOT NULL

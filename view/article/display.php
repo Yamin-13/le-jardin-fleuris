@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Blog de Fleurs</title>
-    <link rel="stylesheet" href="/asset/accueil.css">
+    <link rel="stylesheet" href="/asset/css/accueil.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 

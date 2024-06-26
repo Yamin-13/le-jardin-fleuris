@@ -21,9 +21,9 @@ const LIST_ACCEPTED_FILE_TYPE = [MY_IMG_PNG, MY_IMG_JPG];
 const FILE_MAX_SIZE = 10;
 
 // récupére les informations du formulaire...
-$name = $_POST['name'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+$name = htmlspecialchars($_POST['name']);
+$email = htmlspecialchars($_POST['email']);
+$password = htmlspecialchars($_POST['password']);
 
 // ...et hache le mot de passe
 $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // PASSWORD_BCRYPT ca utilise l'algorithme Blowfish qui est plus sécurisé (survole de la documentation...)

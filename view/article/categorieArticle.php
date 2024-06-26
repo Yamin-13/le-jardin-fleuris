@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/asset/style.css">
-    <title>Articles par catégorie</title>
+    <title>Nos Articles</title>
 </head>
 <body>
     <main class="main-categories">
-        <h1 class="page-title">Articles par catégorie</h1>
+        <h1 class="page-title">Nos Articles</h1>
         <?php
         $currentCategory = '';
         foreach ($articlesByCategory as $article):

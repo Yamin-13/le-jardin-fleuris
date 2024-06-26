@@ -46,7 +46,7 @@ CREATE TABLE article (
 
 CREATE TABLE comment (
   id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY
-  ,textOfComment varchar(500) NOT NULL
+  ,textOfComment varchar(1500) NOT NULL
   ,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   ,idUser bigint(20) NOT NULL
   ,idArticle bigint(20) NOT NULL

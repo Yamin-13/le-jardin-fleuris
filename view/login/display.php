@@ -71,9 +71,9 @@
                             <input type="password" name="password" placeholder="Mot de Passe" required>
                         </div>
                         <div class="input-box">
-                            <input type="file" id="file" name="file" class="inputfile" onchange="updateFileName()">
-                            <label for="file" class="inputfile-label">Votre avatar</label>
-                            <span id="file-name" class="file-name">Aucun fichier sélectionné</span>
+                            <input type="file" id="file" name="file" class="inputfileRegister" onchange="updateFileName()">
+                            <label for="file" class="inputfile-label-register">Votre avatar</label>
+                            <span id="file-name" class="file-name-register">Aucun fichier sélectionné</span>
                         </div>
                         <script>updateFileName()</script>
                         <button class="submit-form" type="submit">Inscription</button>

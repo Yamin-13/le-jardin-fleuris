@@ -18,7 +18,7 @@
     align-items: center;
     overflow: hidden;
     margin-top: 3rem;
-    
+    margin: 60px;
 }
 
 .wrapper .text-right {
@@ -148,6 +148,38 @@ h2 {
     position: absolute;
     z-index: -1;
     width: 90px; 
+}
+
+.inputfileRegister{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    width: 90px; 
+    border-radius: 40px;
+}
+
+.file-name-register{
+    font-size: 0.8em;
+    margin-left: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.inputfile-label-register{
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(145deg, #6cbf40, #4a8e2e);
+    box-shadow: 4px 4px 8px #467a28, -4px -4px 8px #72d148;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    position: relative; 
 }
 
 .inputfile-label {

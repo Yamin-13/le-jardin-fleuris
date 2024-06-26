@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/asset/style.css">
-    <title><?= htmlspecialchars($pageTitle) ?></title>
+    <title><?= ($pageTitle) ?></title>
 </head>
 
 <body>
@@ -25,13 +25,13 @@
                 <tbody>
                     <?php foreach ($listArticle as $article) : ?>
                         <tr>
-                            <td><?= htmlspecialchars($article['id']) ?></td>
-                            <td><a href="/ctrl/article/details.php?id=<?= $article['id'] ?>"><?= htmlspecialchars($article['name']) ?></a></td>
-                            <td><?= htmlspecialchars(mb_strimwidth($article['textOfArticle'], 0, 100, '...')) ?></td>
-                            <td><?= htmlspecialchars($article['date']) ?></td>
+                            <td><?= ($article['id']) ?></td>
+                            <td><a href="/ctrl/article/details.php?id=<?= $article['id'] ?>"><?= ($article['name']) ?></a></td>
+                            <td><?= (mb_strimwidth($article['textOfArticle'], 0, 100, '...')) ?></td>
+                            <td><?= ($article['date']) ?></td>
                             <td>
                                 <?php if (!empty($article['image_filename'])) : ?>
-                                    <img src="/upload/<?= htmlspecialchars($article['image_filename']) ?>" alt="Image" class="imageListAdmin">
+                                    <img src="/upload/<?= ($article['image_filename']) ?>" alt="Image" class="imageListAdmin">
                                 <?php endif; ?>
                             </td>
                             <td>

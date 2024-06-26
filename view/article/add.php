@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/asset/style.css">
-    <title><?= htmlspecialchars($titrePage) ?></title>
+    <title><?= ($titrePage) ?></title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                 <label for="categorie">Catégorie :</label>
                 <select name="idCategorie" id="categorie" required>
                     <?php foreach ($listCategorie as $categorie) { ?>
-                        <option value="<?= $categorie['id'] ?>"><?= htmlspecialchars($categorie['name']) ?></option>
+                        <option value="<?= $categorie['id'] ?>"><?= ($categorie['name']) ?></option>
                     <?php } ?>
                 </select>
             </div>

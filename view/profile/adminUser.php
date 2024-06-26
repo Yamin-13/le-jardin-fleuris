@@ -23,12 +23,12 @@
                 <tbody>
                     <?php foreach ($users as $user): ?>
                         <tr>
-                            <td><?= htmlspecialchars($user['id']) ?></td>
-                            <td><?= htmlspecialchars($user['name']) ?></td>
-                            <td><?= htmlspecialchars($user['email']) ?></td>
-                            <td><?= htmlspecialchars($user['idRole']) ?></td>
+                            <td><?= ($user['id']) ?></td>
+                            <td><?= ($user['name']) ?></td>
+                            <td><?= ($user['email']) ?></td>
+                            <td><?= ($user['idRole']) ?></td>
                             <td>
-                                <a href="/ctrl/profile/deleteUser.php?id=<?= htmlspecialchars($user['id']) ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
+                                <a href="/ctrl/profile/deleteUser.php?id=<?= ($user['id']) ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
                                     <button>Supprimer</button>
                                 </a>
                             </td>

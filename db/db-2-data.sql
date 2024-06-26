@@ -8,9 +8,9 @@ INSERT INTO role (id, code, label ) VALUES
 ;
 
 INSERT INTO user (id, idRole, password, email) VALUES
-     (40, 10, 'yamin@live.fr', 'moi')
-    ,(60, 20, 'bob@live.fr', 'mdp')
-    ,(80, 30, 'tom@live.fr', 'psw')
+     (40, 10, 'moi', 'yamin@live.fr')
+    ,(60, 20, 'mdp', 'bob@live.fr')
+    ,(80, 30, 'psw', 'tom@live.fr')
 ; 
 
 INSERT INTO categorie (id, name) VALUES

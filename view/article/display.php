@@ -28,10 +28,10 @@
                         <?php if (!empty($latestArticles)): ?>
                             <?php foreach ($latestArticles as $article): ?>
                                 <div class="article-card">
-                                    <img src="/upload/<?= htmlspecialchars($article['image_filename']) ?>" alt="Image de l'article">
-                                    <h3><?= htmlspecialchars($article['name']) ?></h3>
-                                    <p><?= htmlspecialchars(mb_strimwidth($article['textOfArticle'], 0, 100, '...')) ?></p>
-                                    <a href="/ctrl/article/details.php?id=<?= htmlspecialchars($article['id']) ?>" class="read-more-btn">Lire plus</a>
+                                    <img src="/upload/<?= ($article['image_filename']) ?>" alt="Image de l'article">
+                                    <h3><?= ($article['name']) ?></h3>
+                                    <p><?= (mb_strimwidth($article['textOfArticle'], 0, 100, '...')) ?></p>
+                                    <a href="/ctrl/article/details.php?id=<?= ($article['id']) ?>" class="read-more-btn">Lire plus</a>
                                 </div>
                             <?php endforeach; ?>
                         <?php else: ?>

@@ -13,19 +13,19 @@
         </section>
         <section class="profile-info">
             <h2>Informations du profil</h2>
-            <p><strong>Email :</strong> <?= htmlspecialchars($_SESSION['user']['email']) ?></p>
-            <p><strong>Nom :</strong> <?= htmlspecialchars($_SESSION['user']['name']) ?></p>
+            <p><strong>Email :</strong> <?= ($_SESSION['user']['email']) ?></p>
+            <p><strong>Nom :</strong> <?= ($_SESSION['user']['name']) ?></p>
         </section>
         <section class="profile-update">
             <h2>Mettre à jour le profil</h2>
             <form action="/ctrl/profile/update.php" method="post" enctype="multipart/form-data">
                 <div>
                     <label for="email">Nouvel Email :</label>
-                    <input type="text" id="email" name="email" value="<?= htmlspecialchars($_SESSION['user']['email']) ?>">
+                    <input type="text" id="email" name="email" value="<?= ($_SESSION['user']['email']) ?>">
                 </div>
                 <div>
                     <label for="name">Nouveau Nom :</label>
-                    <input type="text" id="name" name="name" value="<?= htmlspecialchars($_SESSION['user']['name']) ?>">
+                    <input type="text" id="name" name="name" value="<?= ($_SESSION['user']['name']) ?>">
                 </div>
                 <div>
                     <label for="avatar">Nouveau Avatar :</label>

@@ -40,10 +40,12 @@ $fileSize = $_FILES['image_filename']['size'];
 $fileTmpName  = $_FILES['image_filename']['tmp_name'];
 $fileType = $_FILES['image_filename']['type'];
 
+const MY_IMG_AVIF = 'image/avif';
+const MY_IMG_WEBP = 'image/webp';
 const MY_IMG_PNG = 'image/png';
 const MY_IMG_JPG = 'image/jpeg';
-const LIST_ACCEPTED_FILE_TYPE = [MY_IMG_PNG, MY_IMG_JPG];
-const FILE_MAX_SIZE = 10485760; // 10 MB en octets
+const LIST_ACCEPTED_FILE_TYPE = [MY_IMG_PNG, MY_IMG_JPG, MY_IMG_WEBP, MY_IMG_AVIF];
+const FILE_MAX_SIZE = 10485760; // 10 Mb
 
 // Effectue différents tests sur les données saisies
 $isSupportedFileType = in_array($fileType, LIST_ACCEPTED_FILE_TYPE);
@@ -68,6 +70,12 @@ if ($fileType == MY_IMG_PNG) {
 }
 if ($fileType == MY_IMG_JPG) {
     $imgOriginal = imagecreatefromjpeg($fileTmpName);
+}
+if ($fileType == MY_IMG_AVIF) {
+    $imgOriginal = imagecreatefromavif($fileTmpName);
+}
+if ($fileType == MY_IMG_WEBP) {
+    $imgOriginal = imagecreatefromwebp($fileTmpName);
 }
 $img = imagescale($imgOriginal, 200);
 imagepng($img, $fileTmpName);

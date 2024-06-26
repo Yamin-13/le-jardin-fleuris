@@ -6,7 +6,6 @@
     <title>Articles par catégorie</title>
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main class="main-categories">
         <h1 class="page-title">Articles par catégorie</h1>
         <?php

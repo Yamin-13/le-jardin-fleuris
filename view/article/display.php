@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main class="home-main">
         <section class="hero-section">
             <img src="/asset/img/rose.webp" alt="Image de fleurs" class="hero-image">
@@ -43,30 +42,8 @@
                 <button class="carousel-button next">&gt;</button>
             </div>
         </section>
+       
     </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h2>À propos</h2>
-                <p>Nous partageons notre passion pour les fleurs à travers des articles inspirants et éducatifs.</p>
-            </div>
-            <div class="footer-section contact">
-                <h2>Contactez-nous</h2>
-                <p>Email: contact@lejardinfleuris.com</p>
-                <p>Téléphone: +213 456 789</p>
-            </div>
-            <div class="footer-section social">
-                <h2>Suivez-nous</h2>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">X</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Blog de Fleurs | Tous droits réservés</p>
-        </div>
-    </footer>
     <script src="/asset/script/accueilCarousel.js"></script>
 </body>
 

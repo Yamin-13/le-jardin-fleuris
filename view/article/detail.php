@@ -6,7 +6,6 @@
     <title><?= htmlspecialchars($titrePage) ?></title>
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main class="article-details-container">
         <article class="article-details">
             <h1 class="article-title"><?= htmlspecialchars($article['name']) ?></h1>

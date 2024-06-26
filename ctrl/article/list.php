@@ -23,8 +23,9 @@ $listArticle = $statement->fetchAll(PDO::FETCH_ASSOC);
 $idRole = $_SESSION['user']['idRole'];
 if ($idRole == 10){
     // Rends la vue
+include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/view/Article/list.php';
-
+include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/footer.php';
 } else {
     // rend la vue
     header('Location: /ctrl/login/display.php');

@@ -7,5 +7,6 @@ session_start();
 $dbConnection = getConnection($dbConfig);
 $articlesByCategory = getArticlesByCategory($dbConnection);
 
+include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/view/article/categorieArticle.php';
-
+include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/footer.php';

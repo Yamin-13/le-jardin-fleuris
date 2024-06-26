@@ -27,7 +27,7 @@ if ($userData !== null) {  // !== c'est l'opérateur strict pour vérifié si us
     // ...Alors ca crée une session pour l'utilisateur et le redirige vers la page welcome
    
     $_SESSION['user'] = $userData;  // <=======CEST ICI QUE LE STOCKAGE DE LUTILISATEUR SE FAIT DANS SESSION 
-    header('Location: /ctrl/login/welcome.php'); // redirecion
+    header('Location: /ctrl/article/display.php'); // redirecion
     exit();
 } else {
     //message d'erreur qui s'affiche et ...

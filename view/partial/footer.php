@@ -25,10 +25,29 @@
 
     <?php unset($_SESSION['msg']) ?>
 
-    <ul>
-        <li class="footerTitle">Fleur de Dahlia - 2024</li>
-    </ul>
-</footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>À propos</h2>
+                <p>Nous partageons notre passion pour les fleurs à travers des articles inspirants et éducatifs.</p>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contactez-nous</h2>
+                <p>Email: contact@lejardinfleuris.com</p>
+                <p>Téléphone: +213 456 789</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Suivez-nous</h2>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Blog de Fleurs | Tous droits réservés</p>
+        </div>
+    </footer>
+
+
 </body>
 
 </html>

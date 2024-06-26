@@ -20,5 +20,7 @@
             </form>
         </div>
     </main>
+    include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/footer.php';
+
 </body>
 </html>

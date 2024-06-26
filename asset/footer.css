@@ -1,6 +1,6 @@
 footer {
     padding: 16px;
-    background-color: #54880e;
+    background-color: var(--header-color);
     font-weight: bold;
     width: 100%;
 
@@ -27,4 +27,45 @@ footer {
 
 #listMessage {
     color: rgb(85, 8, 8);
+}
+
+/* Styles pour le footer */
+footer {
+    color: white;
+    padding: 40px 10%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1em;
+    color: white;
+    line-height: 1.6;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
 }

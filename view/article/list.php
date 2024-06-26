@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main>
         <div class="table-container">
             <table class="styled-table">

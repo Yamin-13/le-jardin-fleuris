@@ -8,7 +8,7 @@
     <title><?= $pageTitle ?></title>
 </head>
 <?php
-// Vérifie si l'utilisateur est authentifié
+// Vérifie si l'utilisateur est authentifié en verifiant si y'a $_SESSION['user']
 $isLoggedIn = isset($_SESSION['user']); ?>
 
 <header>
@@ -20,7 +20,6 @@ $isLoggedIn = isset($_SESSION['user']); ?>
             <li><a href="/ctrl/article/display.php">Accueil</a></li>
             <li><a href="/ctrl/article/categorieArticle.php">Nos Articles</a></li>
             <li><a href="/ctrl/login/welcome.php">Nos Galeries</a></li>
-
         </ul>
     </nav>
     <?php if ($isLoggedIn) : ?>
@@ -28,11 +27,10 @@ $isLoggedIn = isset($_SESSION['user']); ?>
             <p id="helloUser">Bonjour, <?= ($_SESSION['user']['name']) ?> </p>
             <a href="/ctrl/profile/profile.php" class="imageAvatar">
                 <p><img class="imageAvatar" src="/upload/<?= $_SESSION['user']['avatar_filename'] ?>" /></p>
-            </a><!---avatar  -->
+            </a>
         </div>
-
         <a href="/ctrl/login/logout.php" class="profile-icon"><img src="/asset/img/flowerYelow-removebg-preview.png" alt="Profile Icon"></a>
     <?php else : ?>
         <a href="/ctrl/login/login.php" class="profile-icon"><img src="/asset/img/loginFlower.png" alt="Login Icon"></a>
-    <?php endif; ?>
+    <?php endif; ?> <!-- endif améliore la visibilité quand le php est mélangé à l'html -->
 </header>

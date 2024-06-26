@@ -25,12 +25,13 @@
                 <button class="carousel-button prev">&lt;</button>
                 <div class="articles-wrapper">
                     <div class="articles-container">
-                        <?php if (!empty($latestArticles)): ?>
+                        <!-- <?php if (!empty($latestArticles)): ?> <--  vérifie si y a des articles dans la variable $latestArticles  -->
                             <?php foreach ($latestArticles as $article): ?>
                                 <div class="article-card">
                                     <img src="/upload/<?= ($article['image_filename']) ?>" alt="Image de l'article">
                                     <h3><?= ($article['name']) ?></h3>
-                                    <p><?= (mb_strimwidth($article['textOfArticle'], 0, 100, '...')) ?></p>
+                                    <!-- mb_strimwidth fonction PHP utilisée pour raccourcir une chaîne de caractères -->
+                                    <p><?= (mb_strimwidth($article['textOfArticle'], 0, 100, '...')) ?></p> 
                                     <a href="/ctrl/article/details.php?id=<?= ($article['id']) ?>" class="read-more-btn">Lire plus</a>
                                 </div>
                             <?php endforeach; ?>

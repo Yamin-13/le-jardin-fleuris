@@ -83,6 +83,8 @@ header nav ul li a:hover {
     margin-right: 80px;
     box-shadow: 4px 4px 8px #467a28, -4px -4px 8px #72d148;
    border: 1px solid black;
+   object-fit: cover;
+
 }
 
 #helloUser{

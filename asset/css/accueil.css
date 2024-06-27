@@ -78,14 +78,17 @@
 }
 
 .article-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 300px;
+    max-width: 300px;
+    min-height: 450px; 
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    display: inline-block;
     white-space: normal;
-    max-width: 300px;
 }
 
 .article-card img {
@@ -98,13 +101,14 @@
     font-size: 1.5em;
     margin: 15px;
     color: var(--text-color);
-    text-overflow: ellipsis; /*points de suspension */  
-    -webkit-line-clamp: 3; 
+    text-overflow: ellipsis; /*points de suspension */ 
+    -webkit-line-clamp: 3;
 }
 
 .article-card p {
     margin: 15px;
     color: #666;
+    flex-grow: 1; 
 }
 
 .read-more-btn {
@@ -116,6 +120,7 @@
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
+    width: 226px;
 }
 
 .read-more-btn:hover {

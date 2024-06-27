@@ -12,9 +12,9 @@
     <main class="secret-container">
         <h2 class="secret-message">Bonjour Administrateur, <?=($_SESSION['user']['name']) ?>.</h2>
         <ul class="admin-actions">
-            <li><a class="header-link" href="/ctrl/article/list.php">Liste des articles</a></li>
             <li><a class="header-link" href="/ctrl/article/add-display.php">Ajouter un article</a></li>
-            <li><a class="header-link" href="/ctrl/profile/adminUser.php">Liste des utilisateurs</a></li>
+            <li><a class="header-link" href="/ctrl/article/list.php">Gestions des articles</a></li>
+            <li><a class="header-link" href="/ctrl/profile/adminUser.php">Gestions des utilisateurs</a></li>
         </ul>
     </main>
 

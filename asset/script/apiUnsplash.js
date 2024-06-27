@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         // 'try' commence un bloc de code qui va tenter d'exécuter les instructions et capturer les erreurs s'il y en a.
 
-        let response = await fetch(`https://api.unsplash.com/search/photos?client_id=${ACCESS_KEY}&query=flowerbouquet&per_page=30`);
+        let response = await fetch(`https://api.unsplash.com/search/photos?client_id=${ACCESS_KEY}&query=flowers&per_page=30`);
         // 'await' attend que la promesse renvoyée par 'fetch' soit résolue.
         // 'fetch' envoie une requête réseau et retourne une promesse qui se résout avec une réponse.
         // 'response' contiendra l'objet de réponse de la requête HTTP à l'API Unsplash.

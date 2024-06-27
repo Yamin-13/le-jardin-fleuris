@@ -15,7 +15,7 @@ INSERT INTO user (id, idRole, password, email) VALUES
 
 INSERT INTO categorie (id, name) VALUES
     (90, 'Fleurs')
-    ,(100, 'plante dinterieur')
+    ,(100, "Plante d'interieur")
     ,(110, 'Le Jardin')
 ;
 

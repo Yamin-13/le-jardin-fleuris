@@ -1,4 +1,5 @@
 <?php
+session_start(); // 1) démarre une nouvelle session
 
 // Supprime un article
 

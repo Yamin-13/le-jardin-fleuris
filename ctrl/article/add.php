@@ -77,7 +77,7 @@ if ($fileType == MY_IMG_AVIF) {
 if ($fileType == MY_IMG_WEBP) {
     $imgOriginal = imagecreatefromwebp($fileTmpName);
 }
-$img = imagescale($imgOriginal, 200);
+$img = imagescale($imgOriginal, 800);
 imagepng($img, $fileTmpName);
 
 // Copie aussi le fichier d'image dans un répertoire

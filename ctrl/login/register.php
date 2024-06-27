@@ -1,8 +1,8 @@
 <?php
+session_start();
 include $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/model/lib/user.php';
-session_start();
 
 $_SESSION['msg']['info'] = [];
 $_SESSION['msg']['error'] = [];

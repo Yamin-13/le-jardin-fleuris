@@ -37,7 +37,6 @@
                         </div>
                         <div class="error-message">
                             <?php
-                            session_start(); // ca initialise une session et la stock ou la reprend si elle existe déja dans les cookies. c'est grace à cette fonction qu'on peut utiliser la variable session
 
                             // message du formulaire de login ca affiche le contenue de "error"  
                             if (isset($_SESSION['error'])) { // isset verifie si ($_SESSION['error']) est pas null

@@ -1,9 +1,9 @@
 <?php
+session_start(); // ca initialise une session et permet à $_SESSION de fonctionner (de stocker dans les coockies) 
 // Ouvre une connexion à la Base de données
 include $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/model/lib/user.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
-session_start(); // ca initialise une session et permet à $_SESSION de fonctionner (de stocker dans les coockies) 
 
 // vérifie si le formulaire de connexion a été soumis
 if (isset($_POST['email']) && isset($_POST['password'])) {

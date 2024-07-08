@@ -13,7 +13,7 @@ $isLoggedIn = isset($_SESSION['user']); ?>
 
 <header>
     <a class="h1Link" href="/ctrl/article/display.php">
-        <h1>Le Jardin Fleuris</h1>
+        <h1>Le Jardin Fleuri</h1>
     </a>
     <nav>
         <ul>

@@ -14,7 +14,7 @@
         <section class="hero-section">
             <img src="/asset/img/rose.webp" alt="Image de fleurs" class="hero-image">
             <div class="welcome-message">
-                <h2 class="welcome-title">Bienvenue Dans Notre Jardin Fleuris</h2>
+                <h2 class="welcome-title">Bienvenue Dans Notre Jardin Fleuri</h2>
                 <p>Découvrez la beauté et la diversité des fleurs</p>
             </div>
         </section>

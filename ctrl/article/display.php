@@ -11,7 +11,7 @@ $dbConnection = getConnection($dbConfig); // 4) ca ppelle la fonction getConnect
 $latestArticles = getLatestArticles($dbConnection, 5); // 5) ca appelle la fonction getLatestArticles() pour récupérer les 5 derniers articles à partir de la base de données
 
 
-$titrePage = "Le Jardin Fleuris";
+$titrePage = "Accueil - Le Jardin Fleuri";
 
 
 // rend la vue

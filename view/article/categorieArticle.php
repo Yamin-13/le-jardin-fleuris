@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/asset/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
-    <title>Nos Articles</title>
+    <title><?php $titrePage ?></title>
 </head>
 <body>
     <main class="main-categories">

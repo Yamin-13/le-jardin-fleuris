@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/asset/css/style.css">
-    <title><?= $pageTitle ?></title>
+    <title><?= $titrePage ?></title>
 </head>
 <?php
 // Vérifie si l'utilisateur est authentifié en verifiant si y'a $_SESSION['user']
@@ -13,7 +13,7 @@ $isLoggedIn = isset($_SESSION['user']); ?>
 
 <header>
     <a class="h1Link" href="/ctrl/article/display.php">
-        <h1>Le Jardin Fleuris</h1>
+        <h1>Le Jardin Fleuri</h1>
     </a>
     <nav>
         <ul>

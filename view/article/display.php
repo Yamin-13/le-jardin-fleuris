@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Blog de Fleurs</title>
+    <title><?php $titrePage ?></title>
     <link rel="stylesheet" href="/asset/css/accueil.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
         <section class="hero-section">
             <img src="/asset/img/rose.webp" alt="Image de fleurs" class="hero-image">
             <div class="welcome-message">
-                <h2 class="welcome-title">Bienvenue Dans Notre Jardin Fleuris</h2>
+                <h2 class="welcome-title">Bienvenue Dans Notre Jardin Fleuri</h2>
                 <p>Découvrez la beauté et la diversité des fleurs</p>
             </div>
         </section>

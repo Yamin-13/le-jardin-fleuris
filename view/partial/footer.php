@@ -32,7 +32,7 @@
             </div>
             <div class="footer-section contact">
                 <h2>Contactez-nous</h2>
-                <p>Email: contact@lejardinfleuris.com</p>
+                <p>Email: contact@lejardinfleuri.com</p>
                 <p>Téléphone: +213 456 789</p>
             </div>
             <div class="footer-section social">

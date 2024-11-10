@@ -8,8 +8,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/article.php';
 $dbConnection = getConnection($dbConfig);
 
 session_start();
-$pageTitle = 'Liste des Articles';
-
+$titrePage = "Liste des articles - Le Jardin Fleuri";
 
 // Prépare la requête
 $query = 'SELECT article.id, article.name, article.image_filename, article.date, article.textOfArticle ';

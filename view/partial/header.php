@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Le Blog de Fleur qui nous transporte dans un jardin fleuri.">
+    <link rel="icon" type="image/x-icon" href="/asset/img/fleur.png">
     <link rel="stylesheet" href="/asset/css/style.css">
     <title><?= $titrePage ?></title>
 </head>
@@ -33,4 +35,5 @@ $isLoggedIn = isset($_SESSION['user']); ?>
     <?php else : ?>
         <a href="/ctrl/login/login.php" class="profile-icon"><img src="/asset/img/loginFlower.png" alt="Login Icon"></a>
     <?php endif; ?> <!-- endif améliore la visibilité quand le php est mélangé à l'html -->
+
 </header>

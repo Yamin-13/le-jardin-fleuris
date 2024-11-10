@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/article.php';
@@ -11,91 +10,55 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
-// Récupère l'ID utilisateur à partir de la session
+// Récupère l'ID utilisateur depuis la session
 $idUser = $_SESSION['user']['id'] ?? null;
-
 if (!$idUser) {
     die('ID utilisateur manquant dans la session.');
 }
 
 $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/upload/';
+$article = [
+    'name' => htmlspecialchars($_POST['name']),
+    'textOfArticle' => htmlspecialchars($_POST['textOfArticle']),
+    'date' => date('Y-m-d H:i:s'),
+    'idUser' => $idUser,
+    'idCategorie' => $_POST['idCategorie']
+];
 
-// Lis les informations depuis la requête HTTP
-$article = [];
-$article['name'] = $_POST['name'] ;
-$article['textOfArticle'] = $_POST['textOfArticle'] ;
-$article['image_filename'] = $_FILES['image_filename']['name'] ;
-$article['date'] = date('Y-m-d H:i:s'); 
-$article['idUser'] = $idUser;
-$article['idCategorie'] = $_POST['idCategorie'] ;
+// Vérifie s'il y a une image à uploader
+if (isset($_FILES['image_filename']) && $_FILES['image_filename']['error'] === UPLOAD_ERR_OK) {
+    $fileTmpName = $_FILES['image_filename']['tmp_name'];
+    $fileName = basename($_FILES['image_filename']['name']);
+    $uploadPath = $uploadDirectory . $fileName;
 
-// Vérifie les erreurs d'upload
-if ($_FILES['image_filename']['error'] !== UPLOAD_ERR_OK) {
-    die('Erreur lors de l\'upload du fichier : ' . $_FILES['image_filename']['error']);
+    // Déplace le fichier vers le répertoire d'upload
+    if (move_uploaded_file($fileTmpName, $uploadPath)) {
+        $article['image_filename'] = $fileName;
+    } else {
+        $_SESSION['msg']['error'][] = 'Erreur lors du téléchargement de l\'image.';
+        header('Location: /ctrl/article/add-display.php');
+        exit;
+    }
+} else {
+    $article['image_filename'] = 'avatar-defaut.webp'; // image par défaut si aucune image n'est téléchargée
 }
 
-// Lis les informations saisies dans le formulaire
-$fileName = $_FILES['image_filename']['name'];
-$fileSize = $_FILES['image_filename']['size'];
-$fileTmpName  = $_FILES['image_filename']['tmp_name'];
-$fileType = $_FILES['image_filename']['type'];
-
-const MY_IMG_AVIF = 'image/avif';
-const MY_IMG_WEBP = 'image/webp';
-const MY_IMG_PNG = 'image/png';
-const MY_IMG_JPG = 'image/jpeg';
-const LIST_ACCEPTED_FILE_TYPE = [MY_IMG_PNG, MY_IMG_JPG, MY_IMG_WEBP, MY_IMG_AVIF];
-const FILE_MAX_SIZE = 10485760; // 10 Mb
-
-// Effectue différents tests sur les données saisies
-$isSupportedFileType = in_array($fileType, LIST_ACCEPTED_FILE_TYPE);
-if (!$isSupportedFileType) {
-    $_SESSION['msg']['error'][] = 'Les seuls formats de fichier acceptés sont : ' . implode(',', LIST_ACCEPTED_FILE_TYPE);
-}
-
-if ($fileSize > FILE_MAX_SIZE) {
-    $_SESSION['msg']['error'][] = 'Le fichier est trop grand. Taille maximale: ' . (FILE_MAX_SIZE / 1048576) . ' MB';
-}
-
-$hasErrors = !empty($_SESSION['msg']['error']);
-if ($hasErrors) {
-    header('Location: ' . '/ctrl/article/add-display.php');
-    exit();
-}
-
-// Redimensionne l'image
-$imgOriginal;
-if ($fileType == MY_IMG_PNG) {
-    $imgOriginal = imagecreatefrompng($fileTmpName);
-}
-if ($fileType == MY_IMG_JPG) {
-    $imgOriginal = imagecreatefromjpeg($fileTmpName);
-}
-if ($fileType == MY_IMG_AVIF) {
-    $imgOriginal = imagecreatefromavif($fileTmpName);
-}
-if ($fileType == MY_IMG_WEBP) {
-    $imgOriginal = imagecreatefromwebp($fileTmpName);
-}
-$img = imagescale($imgOriginal, 800);
-imagepng($img, $fileTmpName);
-
-// Copie aussi le fichier d'image dans un répertoire
-$uploadPath = $uploadDirectory . basename($fileName);
-$didUpload = move_uploaded_file($fileTmpName, $uploadPath);
-
-if (!$didUpload) {
-    die('Échec de l\'upload du fichier.');
-}
-
-// Ouvre une connexion à la Base de données
+// Connexion à la base de données et création de l'article
 $dbConnection = getConnection($dbConfig);
-$isSuccess = create($article['name'], $article['textOfArticle'], $article['date'], $article['image_filename'], $article['idCategorie'], $article['idUser'], $dbConnection);
+$isSuccess = create(
+    $article['name'],
+    $article['textOfArticle'],
+    $article['date'],
+    $article['image_filename'],
+    $article['idCategorie'],
+    $article['idUser'],
+    $dbConnection
+);
 
+// Redirection en fonction du succès ou de l'échec de l'insertion
 if ($isSuccess) {
     header('Location: /ctrl/article/categorieArticle.php');
     exit;
 } else {
     die('La création de l\'article a échoué.');
 }
-

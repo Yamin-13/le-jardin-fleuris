@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/asset/css/style.css">
     <title><?= $titrePage ?></title>
 </head>
+
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main>
@@ -58,7 +59,7 @@
                 </div>
 
                 <div class="form-wrapper register">
-                    <form action="/ctrl/login/register.php" method="post" enctype="multipart/form-data">
+                <form id="registerForm" action="/ctrl/login/register.php" method="post" enctype="multipart/form-data" onsubmit="resizeAndUploadImage(); return false;">
                         <h2>Inscription</h2>
                         <div class="input-box">
                             <input type="text" name="name" placeholder="Nom">
@@ -74,7 +75,9 @@
                             <label for="file" class="inputfile-label-register">Votre avatar</label>
                             <span id="file-name" class="file-name-register">Aucun fichier sélectionné</span>
                         </div>
-                        <script>updateFileName()</script>
+                        <script>
+                            updateFileName()
+                        </script>
                         <button class="submit-form" type="submit">Inscription</button>
                         <div class="sign-link">
                             <p>Déjà Inscrits? <a href="#" onclick="loginActive()">S'Identifier</a></p>
